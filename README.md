@@ -26,7 +26,7 @@
 - Build Backend service to access data from Database to application
 - If possible, Auotmate testing with specific requirements as mentioned in [TaskInfo-Testing Primer](https://dev.solita.fi/2022/11/01/testing-primer-dev-academy.html)
 
-## Tools & Libraries
+## Tools
 - **Backend :** 
     - Language : Python 3.11.x
 - **Database :**
