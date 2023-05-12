@@ -1,4 +1,13 @@
-# Project Documentation
+# Prerequisites
+
+
+# Configuration
+
+
+# Execution
+
+
+# Documentation
 ## Background
 - Helsinki Regional Transport (HSL) service provides city-bikes for hour-based rental seasonally (spring-autumn)
 - HSL requires a web application to understand the usage of their city-bikes.
@@ -20,12 +29,34 @@
     - *Add Journey / Station*
 
 ## Workflow
-- Dump provided into SQL database
+- Install MariaDB
+- Setup database (*hsl_city_bikes*)
+- Create tables with non-null columns and replicate table structure for similar tables (*journeys*) using the following command :
+>>>
+    CREATE TABLE journeys_june LIKE journeys_may;
+    CREATE TABLE journeys_july LIKE journeys_may;
+    
+- Setup all tables (*stations, journeys*) using the following command :
+>>>
+    LOAD DATA INFILE '/path/to/csv/file.csv'
+    INTO TABLE table_name
+    FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+    LINES TERMINATED BY '\n'
+    IGNORE 1 ROWS;
+    
+- Create a virtual environment to install MariaDB Connector/Python package, *mariadb*
+- Build methods to [implement features](#features-to-implement)
 - Build Backend service to access data from Database to application
 - If possible, Auotmate testing with specific requirements as mentioned in [Info-Testing Primer](https://dev.solita.fi/2022/11/01/testing-primer-dev-academy.html)
 
 ## Tools
 - **Backend :** 
-    - Language : Python 3.11.x
+    - Language : Python 3.11 
+        - REASON : Learning C# but have enough proficiency with methods and classes to implement a backend application
 - **Database :**
-    - Maria DB (*version to declare*)
+    - Maria DB 11.1
+        - REASON : Mostly for a single reason that it is an open-source RDBMS that is compatible with multiple operating systems and programming languages
+- **Web Server Framework**
+    - Django (*version to declare*)
+        - REASON : Compatibility of Django with MariaDB is mainly because it supports modeling and managing databases (CRUD operations)
