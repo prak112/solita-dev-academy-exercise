@@ -1,11 +1,13 @@
 # Prerequisites
-
+- Python 3.11
+- MariaDB 11.1
+- Django 4.2
 
 # Configuration
-
+- 
 
 # Execution
-
+- 
 
 # Documentation
 ## Background
