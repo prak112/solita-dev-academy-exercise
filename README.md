@@ -40,8 +40,8 @@
     
 - Setup all tables (*stations, journeys*) using the following command :
 >>>
-    LOAD DATA INFILE '/path/to/csv/file.csv'
-    INTO TABLE table_name
+    LOAD DATA INFILE '<file_url_path>'
+    INTO TABLE <table_name>
     FIELDS TERMINATED BY ','
     ENCLOSED BY '"'
     LINES TERMINATED BY '\n'
@@ -56,9 +56,12 @@
 - **Backend :** 
     - Language : Python 3.11 
         - REASON : Learning C# but have enough proficiency with methods and classes to implement a backend application
+
 - **Database :**
     - Maria DB 11.1
         - REASON : Mostly for a single reason that it is an open-source RDBMS that is compatible with multiple operating systems and programming languages
+
 - **Web Server Framework**
-    - Django (*version to declare*)
-        - REASON : Compatibility of Django with MariaDB is mainly because it supports modeling and managing databases (CRUD operations)
+    - Django (4.2.1)
+        - REASON : Compatibility of Django with MariaDB to support modeling and managing database (CRUD operations)
+        - MVC (Model-View-Controller) Framework
